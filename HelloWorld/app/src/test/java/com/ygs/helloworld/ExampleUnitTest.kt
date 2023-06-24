@@ -1,4 +1,4 @@
-package com.ygs.myfirstapp
+package com.ygs.helloworld
 
 import org.junit.Test
 
