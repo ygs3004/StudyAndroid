@@ -23,4 +23,15 @@ fun main(){
     println("is5Greater3 ${c>d}")
     println("is-5Greater3 ${-c>d}")
     println("is5Lower3 ${c<=d}")
+
+    //대입 증감 연산자(+=, -=, *=, /=, %=)
+    var myNum = 5;
+    myNum += 3
+    println("myNum is $myNum")
+    myNum *= 4
+    println("myNum is $myNum")
+    println("myNum is ${myNum++}")
+    println("myNum is ${++myNum}")
+    println("myNum is ${--myNum}")
+
 }
