@@ -38,6 +38,8 @@ fun main(){
     val firstCharInStr = myStr[0]
     val lastCharInStr = myStr[myStr.length-1]
     println("First Character: $firstCharInStr")
-    print("Last Character: $lastCharInStr")
+    println("Last Character: $lastCharInStr")
+
+    println("First character : $firstCharInStr and the length of myStr is ${myStr.length}" )
 
 }
