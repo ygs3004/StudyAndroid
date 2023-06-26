@@ -14,4 +14,11 @@ fun main() {
         y -= 2
     }
     println("while 종료2")
+
+    x=1;
+    do{
+        println("$x")
+        x++;
+    }while(x<=10)
+    println("do while 종료")
 }
