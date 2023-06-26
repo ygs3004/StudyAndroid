@@ -21,4 +21,14 @@ fun main() {
         x++;
     }while(x<=10)
     println("do while 종료")
+
+    var feltTemp = "cold"
+    var roomTemp = 10
+    while(feltTemp == "cold"){
+        roomTemp++
+        if(roomTemp >= 20){
+            feltTemp = "comfy"
+            println("따뜻해 이제~")
+        }
+    }
 }
