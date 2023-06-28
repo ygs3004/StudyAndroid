@@ -15,6 +15,7 @@ fun main() {
 }
 
 class Person (firstName: String = "Gunsoo", lastName: String = "Yoon"){
+
     //Member Variables - Properties
     var age: Int? = null
     var hobby: String = "게임"
@@ -36,4 +37,5 @@ class Person (firstName: String = "Gunsoo", lastName: String = "Yoon"){
     fun stateHobby(){
         println("${firstName} 취미는 ${hobby}야 ㅎㅎ")
     }
+    
 }
