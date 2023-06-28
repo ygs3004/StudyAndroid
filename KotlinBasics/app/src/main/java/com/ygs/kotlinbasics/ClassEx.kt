@@ -13,7 +13,7 @@ fun main() {
     MobilePhone("Android", "LG", "LG폰")
 }
 
-class MobilePhone(osName:String, brand:String, model:String){
+class Phone(osName:String, brand:String, model:String){
     init{
         println("생성된 핸드폰의 OS 는 ${osName}이고, ${brand}사의 ${model}입니다.")
     }
