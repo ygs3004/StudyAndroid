@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Calculate Your"
-        android:textColor="@color/color4"
+        android:textColor="@color/fontColor1"
         android:textSize="25sp"
         android:textStyle="bold"
         />
@@ -28,7 +28,7 @@
         android:text="Age"
         android:padding="10dp"
         android:background="@color/color0"
-        android:textColor="@color/color4"
+        android:textColor="@color/fontColor1"
         android:textSize="25sp"
         android:textStyle="bold"
         />
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="In Minutes"
-        android:textColor="@color/color4"
+        android:textColor="@color/fontColor1"
         android:textSize="25sp"
         android:textStyle="bold"
         />
@@ -47,9 +47,50 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/btnBgColor"
-        android:textColor="@color/color4"
+        android:textColor="@color/fontColor1"
         android:textStyle="bold"
-        android:text="Button" />
+        android:text="Select Date"
+        android:textSize="18sp"
+        android:backgroundTint="@color/btnBgColor"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="2023/07/10"
+        android:textColor="@color/fontColor1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Selected Date"
+        android:textColor="@color/fontColor2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="1400000000"
+        android:textColor="@color/fontColor1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Selected Date"
+        android:textColor="@color/fontColor2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
 
 </LinearLayout>

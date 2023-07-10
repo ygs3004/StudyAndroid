@@ -7,10 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="color0">#a9927d</color>
-    <color name="color1">#f2f4f3</color>
+    <color name="color0">#C38751</color>
+    <color name="color1">#F4F2F2</color>
     <color name="color2">#5d737e</color>
     <color name="color3">#5e503f</color>
-    <color name="color4">#49111c</color>
+    <color name="primary">#49111c</color>
+    <color name="fontColor1">#49111c</color>
+    <color name="fontColor2">#5e503f</color>
     <color name="btnBgColor">#a9927d</color>
 </resources>
