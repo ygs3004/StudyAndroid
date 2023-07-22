@@ -12,4 +12,9 @@
     <string name="eight">8</string>
     <string name="nine">9</string>
     <string name="divide">/</string>
+    <string name="multiply">*</string>
+    <string name="subtract">-</string>
+    <string name="clr">clr</string>
+    <string name="plus">+</string>
+    <string name="equals">=</string>
 </resources>
