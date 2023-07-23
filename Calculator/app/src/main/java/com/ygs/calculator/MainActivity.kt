@@ -50,10 +50,83 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun onEqual(view: View){
+        if(lastNumeric){
+            var textViewValue = textViewInput?.text.toString()
+            var prefix = ""
+
+            try{
+                if(textViewValue.startsWith("-")){
+                    prefix = "-"
+                    textViewValue = textViewValue.substring(1)
+                }
+
+                if(textViewValue.contains("-")){
+                    val splitValue = textViewValue.split("-")
+
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+
+                    textViewInput?.text = removeZeroAfterDot((one.toDouble() - two.toDouble()).toString())
+                }else if(textViewValue.contains("+")){
+                    val splitValue = textViewValue.split("+")
+
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+
+                    textViewInput?.text = removeZeroAfterDot((one.toDouble() + two.toDouble()).toString())
+                }else if(textViewValue.contains("/")){
+                    val splitValue = textViewValue.split("/")
+
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+
+                    textViewInput?.text = removeZeroAfterDot((one.toDouble() / two.toDouble()).toString())
+                }else if(textViewValue.contains("*")){
+                    val splitValue = textViewValue.split("*")
+
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+
+                    textViewInput?.text = removeZeroAfterDot((one.toDouble() * two.toDouble()).toString())
+                }
+
+
+
+            }catch(e: ArithmeticException){
+                e.printStackTrace()
+            }
+        }
+    }
+
+    private fun removeZeroAfterDot(result: String): String{
+        var value = result
+        if(result.substring(result.length-2) == ".0")
+            value = result.substring(0, result.length-2)
+
+        return value
+    }
+
     private fun isOperatorAdded(value: String): Boolean{
-        return if(value.startsWith("-")){
-            false
-        }else{
+        return if(value.startsWith("-")) {
+                false
+            }else {
             value.contains("/")
                     || value.contains("*")
                     || value.contains("+")
