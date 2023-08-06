@@ -20,10 +20,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
-            android:textSize="22sp"
             android:textColor="#363A43"
-            tools:text = "어느나라의 국기인가요?"
-            />
+            android:textSize="22sp"
+            tools:text="어느나라의 국기인가요?" />
 
         <ImageView
             android:id="@+id/iv_image"
@@ -31,25 +30,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:contentDescription="Quiz Image"
-            tools:src="@drawable/ic_flag_of_germany"/>
+            tools:src="@drawable/ic_flag_of_germany" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
             android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ProgressBar
                 android:id="@+id/progressBar"
-                android:layout_width="0dp"
                 style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:max="9"
                 android:indeterminate="false"
+                android:max="9"
                 android:minHeight="50dp"
-                android:progress="0"/>
+                android:progress="0" />
 
             <TextView
                 android:id="@+id/tv_progress"
@@ -58,13 +57,69 @@
                 android:gravity="center"
                 android:padding="15dp"
                 android:textSize="14sp"
-                tools:text="0/9"
-                />
-
+                tools:text="0/9" />
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/tv_option_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Apple" />
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_option_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Apple" />
+
+        <TextView
+            android:id="@+id/tv_option_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Apple" />
+
+        <TextView
+            android:id="@+id/tv_option_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="#7A8089"
+            android:textSize="18sp"
+            tools:text="Apple" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/design_default_color_primary"
+            android:text="확인"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
 
 </ScrollView>
