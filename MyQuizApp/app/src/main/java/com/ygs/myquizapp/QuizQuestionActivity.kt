@@ -5,10 +5,7 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.widget.*
 import androidx.core.content.ContextCompat
 
 class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
@@ -56,11 +53,11 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setQuestion() {
 
-        mCurrentPosition = 1
-        val question: Question = mQuestionList!![mCurrentPosition - 0]
+        defaultOptionsView()
+        val question: Question = mQuestionList!![mCurrentPosition - 1]
+        ivImage?.setImageResource(question.image)
         progressBar?.progress = mCurrentPosition
         tvProgress?.text = "${mCurrentPosition}/${progressBar?.max}"
-        ivImage?.setImageResource(question.image)
         tvQuestion?.text = question.question
         tvOptionOne?.text = question.optionOne
         tvOptionTwo?.text = question.optionTwo
@@ -136,7 +133,60 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
             R.id.btn_submit -> {
-                // TODO "implement btn submit"
+                if(mSelectedOptionPosition == 0){
+                    mCurrentPosition++
+                    when{
+                        mCurrentPosition <= mQuestionList!!.size -> {
+                            setQuestion()
+                        }
+                        else -> {
+                            Toast.makeText(this, "모든 문제를 풀었습니다. 수고하셨습니다.", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }else{
+                    val question = mQuestionList?.get(mCurrentPosition - 1)
+                    if(question!!.correctAnswer != mSelectedOptionPosition){
+                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                    }
+                    answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+
+                    if(mCurrentPosition == mQuestionList!!.size){
+                        btnSubmit?.text = "완료"
+                    }else{
+                        btnSubmit?.text = "다음"
+                    }
+
+                    mSelectedOptionPosition = 0;
+                }
+            }
+        }
+    }
+
+    private fun answerView(answer: Int, drawableView: Int) {
+        when (answer) {
+            1 -> {
+                tvOptionOne?.background = ContextCompat.getDrawable(
+                    this,
+                    drawableView
+                )
+            }
+            2 -> {
+                tvOptionTwo?.background = ContextCompat.getDrawable(
+                    this,
+                    drawableView
+                )
+            }
+            3 -> {
+                tvOptionThree?.background = ContextCompat.getDrawable(
+                    this,
+                    drawableView
+                )
+            }
+            4 -> {
+                tvOptionFour?.background = ContextCompat.getDrawable(
+                    this,
+                    drawableView
+                )
             }
         }
     }
