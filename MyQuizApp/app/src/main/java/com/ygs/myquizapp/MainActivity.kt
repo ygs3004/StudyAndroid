@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "이름을 입력해주세요", Toast.LENGTH_SHORT).show()
             }else{
                 val intent = Intent(this, QuizQuestionActivity::class.java)
+                intent.putExtra(Constants.USER_NAME, etName.text.toString())
                 startActivity(intent)
                 finish()
             }
