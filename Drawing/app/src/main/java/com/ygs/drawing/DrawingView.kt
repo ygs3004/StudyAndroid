@@ -3,6 +3,7 @@ package com.ygs.drawing
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.util.Log
 import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
@@ -18,9 +19,24 @@ class DrawingView(context: Context, attrs: AttributeSet): View(context, attrs) {
     private var color = Color.BLACK
     private var canvas: Canvas? = null
     private val mPaths = ArrayList<CustomPath>()
+    private val mUndoPath = ArrayList<CustomPath>()
 
     init{
         setUpDrawing()
+    }
+
+    fun onClickUndo(){
+        if(mPaths.size > 0){
+            mUndoPath.add(mPaths.removeAt(mPaths.size-1))
+            invalidate()
+        }
+    }
+
+    fun onClickRedo(){
+        if(mUndoPath.size > 0){
+            mPaths.add(mUndoPath.removeAt(mUndoPath.size-1))
+            invalidate()
+        }
     }
 
     private fun setUpDrawing(){

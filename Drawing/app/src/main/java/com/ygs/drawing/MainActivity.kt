@@ -72,9 +72,19 @@ class MainActivity : AppCompatActivity() {
             ContextCompat.getDrawable(this, R.drawable.pallet_pressed)
         )
 
-        val ib_brush: ImageButton = findViewById(R.id.ib_brush)
-        ib_brush.setOnClickListener(){
+        val ibBrush: ImageButton = findViewById(R.id.ib_brush)
+        ibBrush.setOnClickListener(){
             showBrushSizeChooserDialog()
+        }
+
+        val ibUndo: ImageButton = findViewById(R.id.ib_undo)
+        ibUndo.setOnClickListener(){
+            drawingView?.onClickUndo()
+        }
+
+        val ibRedo: ImageButton = findViewById(R.id.ib_redo)
+        ibRedo.setOnClickListener(){
+            drawingView?.onClickRedo()
         }
 
         val ibGallery: ImageButton = findViewById(R.id.ib_gallery)
@@ -112,7 +122,7 @@ class MainActivity : AppCompatActivity() {
         // Toast.makeText(this, "clicked paint", Toast.LENGTH_LONG).show()
         if(view !== mImageButtonCurrentPaint){
             val imageButton = view as ImageButton
-            val colorTag = imageButton.tag.toString();
+            val colorTag = imageButton.tag.toString()
             drawingView?.setColor(colorTag)
 
             imageButton.setImageDrawable(
