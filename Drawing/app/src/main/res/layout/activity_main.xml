@@ -147,7 +147,7 @@
             />
 
         <ImageButton
-            android:id="@+id/ic_save"
+            android:id="@+id/ib_save"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
