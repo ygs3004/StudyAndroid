@@ -1,5 +1,6 @@
 package com.ygs.workout
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -17,11 +18,8 @@ class MainActivity : AppCompatActivity() {
         //val flStartButton: FrameLayout = findViewById(R.id.flStart)
 
         binding?.flStart?.setOnClickListener{
-            Toast.makeText(
-                this@MainActivity,
-                "시작!",
-                Toast.LENGTH_LONG
-            ).show()
+            val intent = Intent(this ,ExerciseActivity::class.java)
+            startActivity(intent)
         }
     }
 

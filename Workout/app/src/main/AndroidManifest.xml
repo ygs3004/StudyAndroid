@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Workout">
         <activity
+            android:name=".Test"
+            android:exported="true" />
+        <activity
+            android:name=".ExerciseActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
