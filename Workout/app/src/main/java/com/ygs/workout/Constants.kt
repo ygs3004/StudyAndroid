@@ -11,6 +11,7 @@ object Constants {
             false,
             false,
         )
+        exerciseList.add(jumpingJacks)
 
         val wallSit = ExerciseModel(2, "Wall Sit", R.drawable.ic_wall_sits_2, false, false)
         exerciseList.add(wallSit)
@@ -72,8 +73,6 @@ object Constants {
 
         val sidePlank = ExerciseModel(12, "Side Plank", R.drawable.ic_side_plank_12, false, false)
         exerciseList.add(sidePlank)
-
-        exerciseList.add(jumpingJacks)
 
         return exerciseList
     }

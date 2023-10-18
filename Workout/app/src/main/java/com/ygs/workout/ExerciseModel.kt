@@ -24,7 +24,7 @@ class ExerciseModel (
     }
 
     fun getImage(): Int{
-        return id
+        return image
     }
 
     fun setImage(image: Int){
