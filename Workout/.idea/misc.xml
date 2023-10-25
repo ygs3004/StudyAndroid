@@ -8,10 +8,12 @@
         <entry key="..\:/Dev/StudyAndroid/Workout/app/src/main/res/drawable/circular_progress_grey.xml" value="0.35833333333333334" />
         <entry key="..\:/Dev/StudyAndroid/Workout/app/src/main/res/drawable/item_circular_color_accent_background.xml" value="0.35833333333333334" />
         <entry key="..\:/Dev/StudyAndroid/Workout/app/src/main/res/drawable/item_circular_color_accent_border.xml" value="0.2972222222222222" />
+        <entry key="..\:/Dev/StudyAndroid/Workout/app/src/main/res/drawable/item_circular_color_grey_background.xml" value="0.38333333333333336" />
         <entry key="..\:/Dev/StudyAndroid/Workout/app/src/main/res/drawable/item_color_accent_border_ripple_background.xml" value="0.20572916666666666" />
-        <entry key="..\:/Dev/StudyAndroid/Workout/app/src/main/res/layout/activity_exercise.xml" value="0.25" />
+        <entry key="..\:/Dev/StudyAndroid/Workout/app/src/main/res/layout/activity_exercise.xml" value="0.67" />
         <entry key="..\:/Dev/StudyAndroid/Workout/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Dev/StudyAndroid/Workout/app/src/main/res/layout/activity_test.xml" value="0.27445652173913043" />
+        <entry key="..\:/Dev/StudyAndroid/Workout/app/src/main/res/layout/item_exercise_status.xml" value="0.30570652173913043" />
       </map>
     </option>
   </component>
