@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 @Database(entities = [EmployeeEntity::class], version = 1)
 abstract class EmployeeDatabase: RoomDatabase() {
 
-    abstract fun employeeDao():EmployeeDAO
+    abstract fun employeeDao():EmployeeDao
 
     companion object{
 

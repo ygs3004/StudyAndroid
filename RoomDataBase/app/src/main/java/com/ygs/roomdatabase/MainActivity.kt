@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun addRecord(employeeDAO: EmployeeDAO){
+    fun addRecord(employeeDAO: EmployeeDao){
         val name = binding?.etName?.text.toString()
         val email = binding?.etEmailId?.text.toString()
 

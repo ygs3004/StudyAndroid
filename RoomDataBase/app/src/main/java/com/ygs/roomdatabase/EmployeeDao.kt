@@ -4,7 +4,7 @@ import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface EmployeeDAO {
+interface EmployeeDao {
 
     @Insert
     suspend fun insert(employeeEntity: EmployeeEntity)
