@@ -2,9 +2,12 @@ package com.ygs.roomdatabase
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ygs.roomdatabase.databinding.ActivityMainBinding
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +21,13 @@ class MainActivity : AppCompatActivity() {
         val employeeDao = (application as EmployeeApp).db.employeeDao()
         binding?.btnAdd?.setOnClickListener {
             addRecord(employeeDao)
+        }
+
+        lifecycleScope.launch{
+            employeeDao.fetchAllEmployees().collect{
+                val list = ArrayList(it)
+                setupListOfDataIntoRecyclerView(list, employeeDao)
+            }
         }
     }
 
@@ -34,6 +44,22 @@ class MainActivity : AppCompatActivity() {
             }
         }else{
             Toast.makeText(applicationContext, "이름과 이메일을 모두 입력해주세요.", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun setupListOfDataIntoRecyclerView(
+        employeesList: ArrayList<EmployeeEntity>, employeeDao: EmployeeDao
+    ) {
+        if(employeesList.isNotEmpty()){
+            val itemAdapter = ItemAdapter(employeesList)
+
+            binding?.rvItemsList?.layoutManager = LinearLayoutManager(this)
+            binding?.rvItemsList?.adapter = itemAdapter
+            binding?.rvItemsList?.visibility = View.VISIBLE
+            binding?.tvNoRecordsAvailable?.visibility = View.GONE
+        }else{
+            binding?.rvItemsList?.visibility = View.GONE
+            binding?.tvNoRecordsAvailable?.visibility = View.VISIBLE
         }
     }
 }

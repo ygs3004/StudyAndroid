@@ -8,8 +8,8 @@ import com.ygs.roomdatabase.databinding.ItemsRowBinding
 
 class ItemAdapter(
     private val items: ArrayList<EmployeeEntity>,
-    private val updateListener: (id: Int) -> Unit,
-    private val deleteListener: (id: Int) -> Unit
+//    private val updateListener: (id: Int) -> Unit,
+//    private val deleteListener: (id: Int) -> Unit
 ) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
 
     class ViewHolder(binding: ItemsRowBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -38,11 +38,11 @@ class ItemAdapter(
         }
 
         holder.ivEdit.setOnClickListener{
-            updateListener.invoke(item.id)
+            // updateListener.invoke(item.id)
         }
 
         holder.ivDelete.setOnClickListener{
-            deleteListener.invoke(item.id)
+            // deleteListener.invoke(item.id)
         }
 
     }
