@@ -2,7 +2,11 @@ package com.ygs.workout
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.lifecycle.lifecycleScope
 import com.ygs.workout.databinding.ActivityHistoryBinding
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class HistoryActivity : AppCompatActivity() {
 
@@ -23,5 +27,25 @@ class HistoryActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+        val dao = (application as WorkOutApp).db.historyDao()
+        getAllCompleteDates(dao)
+
     }
+
+    private fun getAllCompleteDates(historyDao: HistoryDao){
+        lifecycleScope.launch{
+            historyDao.fetchAllDates().collect { allCompletedDatesList ->
+                for(i in allCompletedDatesList){
+                    Log.e("Date: ", "" +i)
+                    Log.e("Date: ", "" +i.date)
+                }
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
+    }
+
 }
