@@ -3,7 +3,9 @@ package com.ygs.workout
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ygs.workout.databinding.ActivityHistoryBinding
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -35,9 +37,26 @@ class HistoryActivity : AppCompatActivity() {
     private fun getAllCompleteDates(historyDao: HistoryDao){
         lifecycleScope.launch{
             historyDao.fetchAllDates().collect { allCompletedDatesList ->
-                for(i in allCompletedDatesList){
-                    Log.e("Date: ", "" +i)
-                    Log.e("Date: ", "" +i.date)
+                if(allCompletedDatesList.isNotEmpty()){
+                    binding?.tvHistory?.visibility = View.VISIBLE
+                    binding?.rvHistory?.visibility = View.VISIBLE
+                    binding?.tvNoDataAvailable?.visibility = View.INVISIBLE
+
+                    binding?.rvHistory?.layoutManager = LinearLayoutManager(this@HistoryActivity)
+
+                    val dates = ArrayList<String>()
+                    for(history in allCompletedDatesList){
+                        dates.add(history.date)
+                    }
+
+                    val historyAdapter = HistoryAdapter(dates)
+
+                    binding?.rvHistory?.adapter = historyAdapter
+
+                }else{
+                    binding?.tvHistory?.visibility = View.GONE
+                    binding?.rvHistory?.visibility = View.GONE
+                    binding?.tvNoDataAvailable?.visibility = View.VISIBLE
                 }
             }
         }
