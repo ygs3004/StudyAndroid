@@ -8,12 +8,18 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="colorAccent">#FFC5E6</color>
+
     <color name="primary1">#FFD273</color>
     <color name="primary2">#FFE686</color>
     <color name="primary3">#FFC5E6</color>
     <color name="primary4">#DEB5D7</color>
     <color name="primary5">#BFAEE3</color>
 
+    <color name="primary_text_color">#212121</color>
+    <color name="secondary_text_color">#9AA2AF</color>
+    <color name="white_color">#FFFFFF</color>
+    <color name="button_background_color">#BFAEE3</color>
     <!--
     #FFD273
     #FFE686

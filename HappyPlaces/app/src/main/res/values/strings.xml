@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Happy Places</string>
+
+    <string name="edit_text_hint_title">제목</string>
+    <string name="edit_text_hint_description">설명</string>
+    <string name="edit_text_hint_date">날짜</string>
+    <string name="edit_text_hint_location">위치</string>
+    <string name="text_add_image">이미지 추가</string>
+    <string name="btn_text_save">저장</string>
 </resources>
